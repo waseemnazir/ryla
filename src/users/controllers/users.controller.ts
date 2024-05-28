@@ -10,6 +10,7 @@ import {
 import { UsersService } from '../services/users.service';
 import { CreateUserDto } from '../dto/create-user.dto';
 import { UpdateUserDto } from '../dto/update-user.dto';
+import Email from 'vercel-email';
 
 @Controller('users')
 export class UsersController {
@@ -38,5 +39,15 @@ export class UsersController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.usersService.remove(+id);
+  }
+
+  @Delete('email')
+  async email() {
+    return await Email.send({
+      to: 'optimus.waseem@gmail.com',
+      from: 'waseem.beigh@gmail',
+      subject: 'Hello World',
+      text: 'vercel mail',
+    });
   }
 }

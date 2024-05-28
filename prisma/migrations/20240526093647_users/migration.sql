@@ -1,9 +1,7 @@
 -- CreateTable
 CREATE TABLE "Users" (
     "id" TEXT NOT NULL,
-    "firstName" TEXT,
-    "lastName" TEXT,
-    "name" TEXT,
+    "name" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "phoneNumber" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
